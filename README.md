@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<img src="public/next.svg" alt="Kulitmu" width="0" height="0" hidden />
 
-## Getting Started
+# Kulitmu — Sistem Pakar Jenis Kulit dengan Certainty Factor
 
-First, run the development server:
+Kulitmu adalah aplikasi web fullstack berbasis Next.js 14 (App Router) yang membantu mengidentifikasi jenis kulit wajah melalui metode Certainty Factor (CF). UI/UX dirancang mengikuti pengalaman storytelling 16personalities: hero imersif, pertanyaan bernuansa kartu, dan rekomendasi personal.
+
+## ✨ Fitur utama
+
+- **Questionnaire adaptif** dengan skala likert 5 tingkat untuk mengukur intensitas gejala kulit.
+- **Mesin inferensi Certainty Factor** dengan basis aturan lima profil kulit (normal, kering, berminyak, kombinasi, sensitif).
+- **API `/api/diagnose`** yang menerima jawaban pengguna dan mengembalikan ranking profil lengkap beserta kontribusi gejala.
+- **UI responsif** yang meniru estetika 16personalities: gradient lembut, kartu berlapis, insight naratif.
+- **Ritual & rekomendasi kandungan** untuk setiap profil agar pengguna langsung tahu langkah perawatan.
+
+## 🚀 Menjalankan proyek
+
+Pastikan Node.js 18+ dan npm terpasang. Semua perintah dieksekusi dari akar repo (`d:\RSBP FP`).
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# buka http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build produksi
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Lint (opsional)
 
-## Learn More
+```bash
+npm run lint
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🧠 Arsitektur sistem pakar
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **`src/lib/knowledgeBase.ts`** — definisi gejala, opsi jawaban, profil kulit, dan bobot aturan.
+- **`src/lib/cf.ts`** — utilitas Certainty Factor (normalisasi jawaban, kombinasi evidensi, label keyakinan).
+- **`src/app/api/diagnose/route.ts`** — endpoint Next.js yang menerima payload `{ answers: { [symptomId]: value } }` dan merespons ranking profil.
+- **`src/app/page.tsx`** — pengalaman frontend lengkap (hero, kartu pertanyaan, panel hasil, insight tambahan).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📦 Tech stack
 
-## Deploy on Vercel
+- Next.js 16.0.3 (App Router) + React 19.
+- Tailwind CSS v4 experimental (melalui `@tailwindcss/postcss`).
+- TypeScript penuh dengan alias `@/*`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🧩 Pengembangan lanjutan
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Tambahkan penyimpanan sesi (misal, Supabase atau Redis) bila ingin menyimpan riwayat diagnosa.
+- Perluas basis pengetahuan dengan parameter gaya hidup tambahan (tidur, pola makan).
+- Integrasikan tracker progres perawatan harian.
+
+## 🛡️ Lisensi
+
+Proyek ini dibuat untuk kebutuhan Final Project RSBP FP. Gunakan dan modifikasi sesuai kebutuhan akademik atau demonstrasi.
