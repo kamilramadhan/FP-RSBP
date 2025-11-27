@@ -97,7 +97,7 @@ export default function Home() {
             <h1 className="text-4xl font-bold leading-tight md:text-5xl text-slate-900">
               Sistem Pakar untuk membaca<br />
               bahasa kulit wajahmu dengan<br />
-              <span className="text-orange-500">Certainty Factor.</span>
+              <span className="bg-gradient-to-r from-orange-400 to-orange-600 text-transparent bg-clip-text">Certainty Factor.</span>
             </h1>
             <p className="text-base text-slate-600 md:text-lg">
               Terinspirasi dari pengalaman playground 16personalities: interaktif, emosional, dan penuh cerita

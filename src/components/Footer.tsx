@@ -14,7 +14,7 @@ export function Footer() {
           <style>{`
             @keyframes wave-animation {
               0% { transform: translateX(0); }
-              50% { transform: translateX(-50px); }
+              50% { transform: translateX(-120px); }
               100% { transform: translateX(0); }
             }
             .wave-path {
