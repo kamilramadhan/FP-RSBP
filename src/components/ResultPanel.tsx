@@ -14,7 +14,7 @@ export function ResultPanel({ diagnosis, loading }: ResultPanelProps) {
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-500">Kulitmu</p>
         <p className="mt-4 text-lg font-medium text-slate-600">Sedang melakukan analisis...</p>
         <div className="mt-6 flex justify-center">
-          <span className="h-3 w-3 animate-ping rounded-full bg-emerald-400" />
+          <span className="h-3 w-3 animate-ping rounded-full bg-orange-400" />
         </div>
       </div>
     );
@@ -37,7 +37,7 @@ export function ResultPanel({ diagnosis, loading }: ResultPanelProps) {
       <div className="rounded-[calc(1.5rem-1px)] bg-white/80 p-8">
         <p className="text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">Kulitmu mendiagnosis</p>
         <h3 className="mt-3 text-3xl font-bold text-slate-900">{diagnosis.profile.name}</h3>
-        <p className="mt-2 text-sm font-semibold text-emerald-600">{diagnosis.label}</p>
+        <p className="mt-2 text-sm font-semibold text-orange-600">{diagnosis.label}</p>
         <p className="mt-4 text-base text-slate-600">{diagnosis.profile.summary}</p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <div className="rounded-2xl border border-slate-100 bg-white/60 p-4">
