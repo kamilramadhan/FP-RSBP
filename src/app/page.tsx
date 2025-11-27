@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { QuestionCard } from "@/components/QuestionCard";
 import { ResultPanel } from "@/components/ResultPanel";
 import { Logo } from "@/components/Logo";
+import { Footer } from "@/components/Footer";
 import { symptoms, skinProfiles } from "@/lib/knowledgeBase";
 import type { AnswerSheet, Diagnosis } from "@/lib/cf";
 
@@ -79,14 +80,15 @@ export default function Home() {
   const secondaryProfiles = useMemo(() => ranking.slice(1, 4), [ranking]);
 
   return (
-    <div className="min-h-screen bg-white pb-16 text-slate-900">
-      <div className="mx-auto max-w-6xl px-4 py-6">
-        <Logo />
-      </div>
-      <div className="relative isolate overflow-hidden">
-        <div className="absolute inset-x-0 top-0 -z-10 mx-auto h-[480px] max-w-5xl blur-3xl">
-          <div className="h-full w-full bg-gradient-to-br from-orange-200/40 via-orange-100/20 to-transparent opacity-40 animate-float-blur" />
+    <div className="min-h-screen bg-white text-slate-900 flex flex-col">
+      <div className="flex-1">
+        <div className="mx-auto max-w-6xl px-4 py-6">
+          <Logo />
         </div>
+        <div className="relative isolate overflow-hidden">
+          <div className="absolute inset-x-0 top-0 -z-10 mx-auto h-[480px] max-w-5xl blur-3xl">
+            <div className="h-full w-full bg-gradient-to-br from-orange-200/40 via-orange-100/20 to-transparent opacity-40 animate-float-blur" />
+          </div>
         <section className="mx-auto flex max-w-4xl flex-col items-center gap-10 px-4 pb-12 pt-20 text-center">
           <div className="space-y-6">
             <div className="flex justify-center">
@@ -110,7 +112,7 @@ export default function Home() {
             Ambil Test <span>➜</span>
           </button>
         </section>
-      </div>
+        </div>
 
       <main className="mx-auto mt-16 flex max-w-6xl flex-col gap-10 px-4 md:flex-row" id="questionnaire-section">
         {!showQuestionnaire ? (
@@ -211,32 +213,9 @@ export default function Home() {
         </aside>
         )}
       </main>
+      </div>
 
-      <section className="mx-auto mt-16 max-w-6xl rounded-3xl border border-slate-200 bg-slate-50 px-6 py-10 text-slate-900 shadow-inner">
-        <p className="text-sm uppercase tracking-[0.4em] text-orange-600">Kulitmu Framework</p>
-        <h2 className="mt-3 text-3xl font-semibold text-slate-900">Dibangun di atas kepercayaan diri, bukan ketakutan.</h2>
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
-          {[
-            {
-              title: "Algoritma Certainty Factor",
-              body: "Mengukur keyakinan berdasarkan variasi intensitas gejala agar rekomendasi terasa personal.",
-            },
-            {
-              title: "Insight storytelling",
-              body: "Meniru pengalaman 16personalities dengan narasi penuh warna, bukan sekadar angka kering.",
-            },
-            {
-              title: "Ritual praktis",
-              body: "Setiap profil dibekali ritual harian, kandungan favorit, dan suara afimasi yang lembut.",
-            },
-          ].map((item) => (
-            <div key={item.title} className="rounded-3xl bg-white border border-slate-200 p-6">
-              <h3 className="text-xl font-semibold text-slate-900">{item.title}</h3>
-              <p className="mt-2 text-sm text-slate-700">{item.body}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <Footer />
     </div>
   );
 }
