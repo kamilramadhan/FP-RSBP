@@ -184,7 +184,7 @@ export const symptoms: Symptom[] = [
 export const skinProfiles: SkinProfile[] = [
   {
     id: "normal",
-    name: "Kulit Seimbang",
+    name: "Kulit Normal",
     tone: "#1f2937",
     summary:
       "Sebum dan hidrasi stabil, pori halus, jarang reaktif. Fokusnya menjaga ritme sehat agar tetap resilien.",
@@ -200,7 +200,7 @@ export const skinProfiles: SkinProfile[] = [
   },
   {
     id: "dry",
-    name: "Kulit Pencari Hidrasi",
+    name: "Kulit Kering",
     tone: "#8b5cf6",
     summary:
       "Barrier cenderung rapuh, cepat terasa kencang dan mengelupas. Dibutuhkan lapisan oklusif lembut.",
@@ -216,7 +216,7 @@ export const skinProfiles: SkinProfile[] = [
   },
   {
     id: "oily",
-    name: "Kulit Penjaga Kilau",
+    name: "Kulit Berminyak",
     tone: "#ea580c",
     summary:
       "Produksi sebum aktif menyebabkan pori besar dan jerawat. Butuh kontrol minyak tanpa membuat kering.",
@@ -232,7 +232,7 @@ export const skinProfiles: SkinProfile[] = [
   },
   {
     id: "combination",
-    name: "Kulit Harmoni Dua Dunia",
+    name: "Kulit Kombinasi",
     tone: "#0ea5e9",
     summary:
       "Area T-zone berminyak tapi pipi bisa kering. Perlu pendekatan zona spesifik.",
@@ -248,7 +248,7 @@ export const skinProfiles: SkinProfile[] = [
   },
   {
     id: "sensitive",
-    name: "Kulit Sang Empu Pelindung",
+    name: "Kulit Sensitif",
     tone: "#f43f5e",
     summary:
       "Mudah memerah, terasa panas, dan reaktif terhadap perubahan cuaca maupun produk baru.",
@@ -265,31 +265,48 @@ export const skinProfiles: SkinProfile[] = [
 ];
 
 export const rules: Rule[] = [
-  // Oily skin
-  { skinTypeId: "oily", symptomId: "symptom_7", weight: 0.9 },
-  { skinTypeId: "oily", symptomId: "symptom_8", weight: 0.9 },
-  { skinTypeId: "oily", symptomId: "symptom_9", weight: 0.85 },
-  { skinTypeId: "oily", symptomId: "symptom_14", weight: 0.7 },
+  // ============================================
+  // NORMAL SKIN (Kulit Seimbang)
+  // ============================================
+  { skinTypeId: "normal", symptomId: "symptom_1", weight: 0.8 },  // Tidak berminyak
+  { skinTypeId: "normal", symptomId: "symptom_2", weight: 0.8 },  // Segar dan halus
+  { skinTypeId: "normal", symptomId: "symptom_3", weight: 0.8 },  // Bahan kosmetik mudah menempel
+  { skinTypeId: "normal", symptomId: "symptom_4", weight: 0.8 },  // Terlihat sehat
+  { skinTypeId: "normal", symptomId: "symptom_5", weight: 0.8 },  // Tidak berjerawat
+  { skinTypeId: "normal", symptomId: "symptom_6", weight: 0.8 },  // Mudah memilih kosmetik
+  { skinTypeId: "normal", symptomId: "symptom_11", weight: 0.8 }, // Pori-pori halus
 
-  // Dry skin
-  { skinTypeId: "dry", symptomId: "symptom_10", weight: 0.9 },
-  { skinTypeId: "dry", symptomId: "symptom_15", weight: 0.75 },
-  { skinTypeId: "dry", symptomId: "symptom_13", weight: 0.6 },
+  // ============================================
+  // OILY SKIN (Kulit Berminyak)
+  // ============================================
+  { skinTypeId: "oily", symptomId: "symptom_7", weight: 0.8 },   // Pori-pori besar
+  { skinTypeId: "oily", symptomId: "symptom_8", weight: 0.8 },   // Kulit mengkilat
+  { skinTypeId: "oily", symptomId: "symptom_9", weight: 0.8 },   // Sering berjerawat
+  { skinTypeId: "oily", symptomId: "symptom_16", weight: 0.8 },  // Kadang berjerawat
 
-  // Combination skin
-  { skinTypeId: "combination", symptomId: "symptom_14", weight: 0.8 },
-  { skinTypeId: "combination", symptomId: "symptom_15", weight: 0.8 },
+  // ============================================
+  // DRY SKIN (Kulit Kering)
+  // ============================================
+  { skinTypeId: "dry", symptomId: "symptom_1", weight: 0.6 },    // Tidak berminyak
+  { skinTypeId: "dry", symptomId: "symptom_5", weight: 0.6 },    // Tidak berjerawat
+  { skinTypeId: "dry", symptomId: "symptom_10", weight: 0.8 },   // Kulit kelihatan kering
+  { skinTypeId: "dry", symptomId: "symptom_11", weight: 0.6 },   // Pori-pori halus
+  { skinTypeId: "dry", symptomId: "symptom_12", weight: 0.6 },   // Tekstur kulit tipis
 
-  // Sensitive skin
-  { skinTypeId: "sensitive", symptomId: "symptom_18", weight: 0.9 },
-  { skinTypeId: "sensitive", symptomId: "symptom_19", weight: 0.9 },
-  { skinTypeId: "sensitive", symptomId: "symptom_20", weight: 0.85 },
+  // ============================================
+  // COMBINATION SKIN (Kulit Kombinasi)
+  // ============================================
+  { skinTypeId: "combination", symptomId: "symptom_7", weight: 0.6 },   // Pori-pori besar
+  { skinTypeId: "combination", symptomId: "symptom_14", weight: 0.4 },  // Sebagian berminyak
+  { skinTypeId: "combination", symptomId: "symptom_15", weight: 0.6 },  // Sebagian kering
+  { skinTypeId: "combination", symptomId: "symptom_16", weight: 0.4 },  // Kadang berjerawat
+  { skinTypeId: "combination", symptomId: "symptom_17", weight: 0.6 },  // Sulit polesan kosmetik
 
-  // Normal skin
-  { skinTypeId: "normal", symptomId: "symptom_1", weight: 0.8 },
-  { skinTypeId: "normal", symptomId: "symptom_2", weight: 0.8 },
-  { skinTypeId: "normal", symptomId: "symptom_4", weight: 0.75 },
-  { skinTypeId: "normal", symptomId: "symptom_5", weight: 0.7 },
-  { skinTypeId: "normal", symptomId: "symptom_11", weight: 0.75 },
-  { skinTypeId: "normal", symptomId: "symptom_6", weight: 0.7 },
+  // ============================================
+  // SENSITIVE SKIN (Kulit Sensitif)
+  // ============================================
+  { skinTypeId: "sensitive", symptomId: "symptom_12", weight: 0.8 },  // Tekstur kulit tipis
+  { skinTypeId: "sensitive", symptomId: "symptom_18", weight: 0.8 },  // Mudah alergi
+  { skinTypeId: "sensitive", symptomId: "symptom_19", weight: 0.8 },  // Mudah iritasi
+  { skinTypeId: "sensitive", symptomId: "symptom_20", weight: 0.8 },  // Mudah kemerahan
 ];
