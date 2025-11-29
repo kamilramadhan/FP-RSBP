@@ -45,7 +45,7 @@ export default function Home() {
     setShowQuestionnaire(true);
     setTimeout(() => {
       const element = document.getElementById("questionnaire-section");
-      element?.scrollIntoView({ behavior: "smooth", block: "start" });
+      element?.scrollIntoView({ behavior: "smooth", block: "center" });
     }, 0);
   };
 
@@ -145,7 +145,7 @@ export default function Home() {
           </div>
         ) : (
           <div className="flex-1 space-y-6">
-            <div className="rounded-3xl border border-slate-100 bg-white/80 p-6 shadow-lg">
+            <div className="rounded-3xl border border-slate-100 bg-white/80 p-6 shadow-lg pt-12">
               <div className="mb-4">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm font-semibold text-slate-700">
