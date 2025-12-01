@@ -49,7 +49,7 @@ export function Footer() {
 
           <div className="text-white/80 text-sm text-center md:text-right">
             <p>© 2025 Kulitmu</p>
-            <p className="text-white/60">Author: Kelompok X - RSBP (C)</p>
+            <p className="text-white/60">Author: Kelompok 7 - RSBP (C)</p>
           </div>
         </div>
       </footer>
