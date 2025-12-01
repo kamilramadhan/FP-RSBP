@@ -31,7 +31,7 @@ export type Rule = {
 };
 
 const certaintyOptions: SymptomOption[] = [
-  { label: "Tidak Tahu", value: 0, helper: "Unknown" },
+  { label: "Tidak/ Tidak Tahu", value: 0, helper: "Unknown" },
   { label: "Kemungkinan", value: 0.4, helper: "Maybe" },
   { label: "Kemungkinan Besar", value: 0.6, helper: "Probably" },
   { label: "Hampir Pasti", value: 0.8, helper: "Almost Certainly" },
