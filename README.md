@@ -57,3 +57,31 @@ npm run lint
 ## 🛡️ Lisensi
 
 Proyek ini dibuat untuk kebutuhan Final Project RSBP FP. Gunakan dan modifikasi sesuai kebutuhan akademik atau demonstrasi.
+ 
+## 📤 Deploy ke Vercel
+
+Langkah singkat untuk deploy ke Vercel (recommended — Vercel akan membangun situs di cloud):
+
+1. Pastikan kode sudah ada di repository Git (GitHub / GitLab / Bitbucket) dan ter-push.
+2. Buka https://vercel.com/import dan pilih repository Anda.
+3. Pada halaman pengaturan project di Vercel:
+	 - Framework Preset: Next.js
+	 - Build Command: `npm run build` (atau biarkan default `next build`)
+	 - Output Directory: kosongkan (Next.js akan otomatis)
+4. Jika aplikasi memerlukan environment variables, tambahkan di Settings -> Environment Variables sebelum deploy.
+5. Klik Deploy — Vercel akan menjalankan instalasi dependensi dan build di cloud.
+
+Catatan penting:
+- Saya mencoba menjalankan `npm install` di mesin Anda untuk memverifikasi build lokal, namun proses gagal karena "no space left on device" (ENOSPC). Anda punya dua opsi:
+	1. Kosongkan ruang disk di mesin lokal Anda lalu jalankan `npm install` dan `npm run build` untuk verifikasi lokal, atau
+	2. Langsung deploy ke Vercel — Vercel akan membangun aplikasi di servernya sehingga verifikasi lokal tidak wajib.
+
+Opsional: file `vercel.json` biasanya tidak diperlukan untuk Next.js di Vercel, tapi jika Anda ingin mengatur build command khusus, buat file `vercel.json` minimal seperti:
+
+```
+{
+	"buildCommand": "npm run build"
+}
+```
+
+Jika Anda mau, saya bisa bantu membuat `vercel.json` atau menambahkan instruksi khusus lain untuk environment vars.
