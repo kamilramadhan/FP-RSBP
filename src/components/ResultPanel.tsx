@@ -41,11 +41,11 @@ export function ResultPanel({ diagnosis, loading }: ResultPanelProps) {
         <p className="mt-4 text-base text-slate-600">{diagnosis.profile.summary}</p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           <div className="rounded-2xl border border-slate-100 bg-white/60 p-4">
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">Mantra</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">Kondisi Ideal</p>
             <p className="mt-2 text-lg font-semibold text-slate-900">{diagnosis.profile.mantra}</p>
           </div>
           <div className="rounded-2xl border border-slate-100 bg-white/60 p-4">
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">Ritual Inti</p>
+            <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">Tips</p>
             <ul className="mt-2 list-disc space-y-1 pl-4 text-sm text-slate-600">
               {diagnosis.profile.careRitual.map((step) => (
                 <li key={step}>{step}</li>
